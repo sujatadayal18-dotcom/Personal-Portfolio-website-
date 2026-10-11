@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import { SiteShell } from "@/components/site-shell";
+import { PageHero } from "@/components/page-hero";
+import { BlogExplorer } from "@/components/blog-explorer";
+import { publishedArticles } from "@/content/articles";
+
+export const metadata:Metadata={title:"Ideas — Coming Soon",description:"Practical AI and digital marketing ideas from Digital Sujata are coming soon."};
+export default function BlogPage(){return <SiteShell><main><PageHero eyebrow="Ideas from Digital Sujata" title="Practical guides are coming soon." intro="This space is being prepared for clear, useful notes on AI, digital marketing, content, lead generation, and simpler systems."/><section className="section"><div className="container">{publishedArticles.length>0?<BlogExplorer articles={publishedArticles}/>:<div className="editorial-coming-soon"><div className="editorial-collage" aria-hidden="true"><article className="editorial-card editorial-one"><div><span/><span/><span/></div><small>AI + MARKETING</small><strong>Editorial space reserved</strong></article><article className="editorial-card editorial-two"><div><span/><span/></div><small>CONTENT + CREATIVE</small><strong>Editorial space reserved</strong></article><article className="editorial-card editorial-three"><div><span/><span/><span/><span/></div><small>GROWTH + SYSTEMS</small><strong>Editorial space reserved</strong></article></div><div className="coming-soon"><span className="brand-mark" aria-hidden="true">DS</span><p className="eyebrow">In development</p><h2>No articles have been published yet.</h2><p>Draft content remains private until it has been reviewed and approved. Check back later for practical ideas without the hype.</p></div></div>}</div></section></main></SiteShell>}
